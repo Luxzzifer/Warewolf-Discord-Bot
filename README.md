@@ -3,6 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![Discord.py](https://img.shields.io/badge/discord.py-2.3.2-green.svg)](https://github.com/Rapptz/discord.py)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/Luxzzifer/Warewolf-Discord-Bot/releases)
 
 ---
 ![Warewolf Bot GUI](/Pic/Readmd/image.png))

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+    <string name="app_title">Werewolf Discord Bot</string>
+    <string name="subtitle">Game Werewolf Otomatis di Discord</string>
+    <string name="bot_config">BOT CONFIGURATION</string>
+    <string name="token_label">Discord Bot Token</string>
+    <string name="show_token">Tampilkan Token</string>
+    <string name="help_text">Masukkan token bot Discord Anda di sini</string>
+    <string name="warning_text">Jangan bagikan token ke siapapun!</string>
+    <string name="system_status">SYSTEM STATUS</string>
+    <string name="status_offline">BOT OFFLINE</string>
+    <string name="status_online">BOT ONLINE</string>
+    <string name="status_error">BOT ERROR</string>
+    <string name="detail_not_running">Belum dijalankan</string>
+    <string name="detail_running">Bot sedang berjalan...</string>
+    <string name="detail_stopped">Bot dihentikan</string>
+    <string name="detail_error">Bot error - Cek log</string>
+    <string name="network_status">NETWORK STATUS</string>
+    <string name="check_connection">Cek Koneksi</string>
+    <string name="auto_monitor">Auto Monitor</string>
+    <string name="start_bot">START BOT</string>
+    <string name="stop_bot">STOP BOT</string>
+    <string name="restart_bot">RESTART</string>
+    <string name="console_output">CONSOLE OUTPUT</string>
+    <string name="clear_log">Clear</string>
+    <string name="save_log">Save</string>
+    <string name="auto_scroll">Auto Scroll</string>
+    <string name="auto_reconnect">Auto Reconnect</string>
+    <string name="copyright">2024 Werewolf Bot</string>
+    <string name="internet_online">Koneksi Internet: ONLINE</string>
+    <string name="internet_offline">Koneksi Internet: OFFLINE</string>
+    <string name="internet_connected">✅ Internet terhubung</string>
+    <string name="internet_disconnected">❌ Tidak ada koneksi internet!</string>
+    <string name="checking">Cek Koneksi...</string>
+    <string name="language">Bahasa</string>
+</strings>

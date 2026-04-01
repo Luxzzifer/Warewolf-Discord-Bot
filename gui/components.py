@@ -4,23 +4,12 @@ from .styles import Colors
 
 
 class ModernButton(tk.Button):
-    """
-    Custom modern button with hover effect.
-    """
+    """Custom modern button with hover effect"""
     def __init__(self, parent, text, color, command, state=tk.NORMAL, **kwargs):
         super().__init__(
-            parent,
-            text=text,
-            bg=color,
-            fg='white',
-            relief=tk.FLAT,
-            bd=0,
-            padx=15,
-            pady=8,
-            cursor='hand2',
-            command=command,
-            state=state,
-            **kwargs
+            parent, text=text, bg=color, fg='white', relief=tk.FLAT,
+            bd=0, padx=15, pady=8, cursor='hand2', command=command,
+            state=state, **kwargs
         )
         self.default_bg = color
         self.bind("<Enter>", self.on_enter)
@@ -34,9 +23,6 @@ class ModernButton(tk.Button):
 
     @staticmethod
     def darken_color(color):
-        """
-        Darken a hex color by 30 points.
-        """
         if color.startswith('#'):
             r = int(color[1:3], 16)
             g = int(color[3:5], 16)
@@ -46,9 +32,6 @@ class ModernButton(tk.Button):
 
 
 class NetworkStatusCard(tk.Frame):
-    """
-    Network status card component.
-    """
     def __init__(self, parent, colors, fonts, lang_manager):
         super().__init__(parent, bg=colors.BG_CARD, relief=tk.RAISED, bd=1)
         self.colors = colors
@@ -59,7 +42,6 @@ class NetworkStatusCard(tk.Frame):
         self.setup_ui()
 
     def setup_ui(self):
-        # Header
         header = tk.Frame(self, bg=self.colors.BG_CARD_HEADER, height=35)
         header.pack(fill=tk.X)
         header.pack_propagate(False)
@@ -68,19 +50,16 @@ class NetworkStatusCard(tk.Frame):
                                      fg=self.colors.TEXT_WHITE)
         self.header_label.pack(expand=True, pady=8)
 
-        # Content
         content = tk.Frame(self, bg=self.colors.BG_CARD, padx=15, pady=10)
         content.pack(fill=tk.X)
 
-        # Indicator
         indicator_frame = tk.Frame(content, bg=self.colors.BG_CARD)
         indicator_frame.pack(fill=tk.X, pady=5)
 
         self.canvas = tk.Canvas(indicator_frame, width=10, height=10,
                                 bg=self.colors.BG_CARD, highlightthickness=0)
         self.canvas.pack(side=tk.LEFT, padx=(0, 8))
-        self.dot = self.canvas.create_oval(2, 2, 8, 8,
-                                           fill=self.colors.STATUS_OFFLINE, outline='')
+        self.dot = self.canvas.create_oval(2, 2, 8, 8, fill=self.colors.STATUS_OFFLINE, outline='')
 
         self.label = tk.Label(indicator_frame, text=self.lang.get("checking"),
                               font=self.fonts.subtitle, bg=self.colors.BG_CARD,
@@ -91,7 +70,6 @@ class NetworkStatusCard(tk.Frame):
                                bg=self.colors.BG_CARD, fg=self.colors.TEXT_GRAY_LIGHT)
         self.detail.pack(pady=2)
 
-        # Buttons
         btn_frame = tk.Frame(content, bg=self.colors.BG_CARD)
         btn_frame.pack(pady=5)
 
@@ -107,7 +85,6 @@ class NetworkStatusCard(tk.Frame):
         self.auto_monitor_cb.pack(side=tk.LEFT, padx=5)
 
     def update_language(self):
-        """Update texts when language changes."""
         self.header_label.config(text=self.lang.get("network_status"))
         self.check_btn.config(text=self.lang.get("check_connection"))
         self.auto_monitor_cb.config(text=self.lang.get("auto_monitor"))
@@ -117,26 +94,18 @@ class NetworkStatusCard(tk.Frame):
             self.label.config(text=self.lang.get("checking"))
 
     def update_status(self, status):
-        """Update network status display."""
         self._current_status = status
         if status["internet"]:
             self.canvas.itemconfig(self.dot, fill=self.colors.STATUS_ONLINE)
-            self.label.config(text=self.lang.get("internet_online"),
-                              fg=self.colors.STATUS_ONLINE)
-            self.detail.config(text=self.lang.get("internet_connected"),
-                               fg=self.colors.STATUS_ONLINE)
+            self.label.config(text=self.lang.get("internet_online"), fg=self.colors.STATUS_ONLINE)
+            self.detail.config(text=self.lang.get("internet_connected"), fg=self.colors.STATUS_ONLINE)
         else:
             self.canvas.itemconfig(self.dot, fill=self.colors.STATUS_OFFLINE)
-            self.label.config(text=self.lang.get("internet_offline"),
-                              fg=self.colors.STATUS_OFFLINE)
-            self.detail.config(text=self.lang.get("internet_disconnected"),
-                               fg=self.colors.STATUS_OFFLINE)
+            self.label.config(text=self.lang.get("internet_offline"), fg=self.colors.STATUS_OFFLINE)
+            self.detail.config(text=self.lang.get("internet_disconnected"), fg=self.colors.STATUS_OFFLINE)
 
 
 class StatusCard(tk.Frame):
-    """
-    System status card component.
-    """
     def __init__(self, parent, colors, fonts, lang_manager):
         super().__init__(parent, bg=colors.BG_CARD, relief=tk.RAISED, bd=1)
         self.colors = colors
@@ -146,7 +115,6 @@ class StatusCard(tk.Frame):
         self.setup_ui()
 
     def setup_ui(self):
-        # Header
         header = tk.Frame(self, bg=self.colors.BG_CARD_HEADER, height=35)
         header.pack(fill=tk.X)
         header.pack_propagate(False)
@@ -155,19 +123,16 @@ class StatusCard(tk.Frame):
                                      fg=self.colors.TEXT_WHITE)
         self.header_label.pack(expand=True, pady=8)
 
-        # Content
         content = tk.Frame(self, bg=self.colors.BG_CARD, padx=15, pady=15)
         content.pack(fill=tk.X)
 
-        # Indicator
         indicator_frame = tk.Frame(content, bg=self.colors.BG_CARD)
         indicator_frame.pack(pady=5)
 
         self.canvas = tk.Canvas(indicator_frame, width=12, height=12,
                                 bg=self.colors.BG_CARD, highlightthickness=0)
         self.canvas.pack(side=tk.LEFT, padx=(0, 10))
-        self.dot = self.canvas.create_oval(2, 2, 10, 10,
-                                           fill=self.colors.STATUS_OFFLINE, outline='')
+        self.dot = self.canvas.create_oval(2, 2, 10, 10, fill=self.colors.STATUS_OFFLINE, outline='')
 
         self.status_label = tk.Label(indicator_frame, text=self.lang.get("status_offline"),
                                      font=self.fonts.status, fg=self.colors.STATUS_OFFLINE,
@@ -180,33 +145,28 @@ class StatusCard(tk.Frame):
         self.detail_label.pack(pady=5)
 
     def update_language(self):
-        """Update texts when language changes."""
         self.header_label.config(text=self.lang.get("system_status"))
         self._update_state()
 
     def set_online(self):
         self.canvas.itemconfig(self.dot, fill=self.colors.STATUS_ONLINE)
-        self.status_label.config(text=self.lang.get("status_online"),
-                                 fg=self.colors.STATUS_ONLINE)
+        self.status_label.config(text=self.lang.get("status_online"), fg=self.colors.STATUS_ONLINE)
         self.detail_label.config(text=self.lang.get("detail_running"))
         self._state = "online"
 
     def set_offline(self):
         self.canvas.itemconfig(self.dot, fill=self.colors.STATUS_OFFLINE)
-        self.status_label.config(text=self.lang.get("status_offline"),
-                                 fg=self.colors.STATUS_OFFLINE)
+        self.status_label.config(text=self.lang.get("status_offline"), fg=self.colors.STATUS_OFFLINE)
         self.detail_label.config(text=self.lang.get("detail_not_running"))
         self._state = "offline"
 
     def set_error(self):
         self.canvas.itemconfig(self.dot, fill=self.colors.STATUS_WARNING)
-        self.status_label.config(text=self.lang.get("status_error"),
-                                 fg=self.colors.STATUS_WARNING)
+        self.status_label.config(text=self.lang.get("status_error"), fg=self.colors.STATUS_WARNING)
         self.detail_label.config(text=self.lang.get("detail_error"))
         self._state = "error"
 
     def _update_state(self):
-        """Refresh text based on current state after language change."""
         if self._state == "online":
             self.set_online()
         elif self._state == "offline":
@@ -216,9 +176,6 @@ class StatusCard(tk.Frame):
 
 
 class TokenCard(tk.Frame):
-    """
-    Token input card component.
-    """
     def __init__(self, parent, colors, fonts, lang_manager, show_token_var, toggle_token_cmd):
         super().__init__(parent, bg=colors.BG_CARD, relief=tk.RAISED, bd=1)
         self.colors = colors
@@ -230,7 +187,6 @@ class TokenCard(tk.Frame):
         self.setup_ui()
 
     def setup_ui(self):
-        # Header
         header = tk.Frame(self, bg=self.colors.BG_CARD_HEADER, height=40)
         header.pack(fill=tk.X)
         header.pack_propagate(False)
@@ -240,11 +196,9 @@ class TokenCard(tk.Frame):
                                      fg=self.colors.TEXT_WHITE)
         self.header_label.pack(expand=True, pady=10)
 
-        # Content
         content = tk.Frame(self, bg=self.colors.BG_CARD, padx=15, pady=15)
         content.pack(fill=tk.X)
 
-        # Token label
         label_frame = tk.Frame(content, bg=self.colors.BG_CARD)
         label_frame.pack(fill=tk.X, pady=(0, 5))
         self.token_label = tk.Label(label_frame, text=self.lang.get("token_label"),
@@ -252,7 +206,6 @@ class TokenCard(tk.Frame):
                                     fg=self.colors.TEXT_GRAY)
         self.token_label.pack(anchor=tk.W)
 
-        # Entry
         self.token_entry = tk.Entry(content, font=("Consolas", 11),
                                     bg=self.colors.BG_DARK, fg=self.colors.TEXT_WHITE,
                                     insertbackground=self.colors.STATUS_ONLINE,
@@ -260,7 +213,6 @@ class TokenCard(tk.Frame):
                                     highlightcolor=self.colors.STATUS_ONLINE)
         self.token_entry.pack(fill=tk.X, pady=(5, 8), ipady=10)
 
-        # Help text
         help_frame = tk.Frame(content, bg=self.colors.BG_CARD)
         help_frame.pack(fill=tk.X, pady=(0, 8))
         self.help_label = tk.Label(help_frame, text=self.lang.get("help_text"),
@@ -268,18 +220,16 @@ class TokenCard(tk.Frame):
                                    fg=self.colors.TEXT_GRAY_LIGHT)
         self.help_label.pack(anchor=tk.W)
 
-        # Checkbox
         checkbox_frame = tk.Frame(content, bg=self.colors.BG_CARD)
         checkbox_frame.pack(anchor=tk.W, pady=(0, 5))
         self.show_token_cb = tk.Checkbutton(checkbox_frame, text=self.lang.get("show_token"),
                                             variable=self.show_token_var,
-                                            command=self.toggle_token_cmd,
+                                            command=self.toggle_visibility,
                                             bg=self.colors.BG_CARD, fg=self.colors.TEXT_GRAY_LIGHT,
                                             selectcolor=self.colors.BG_CARD, cursor='hand2',
                                             font=self.fonts.subtitle)
         self.show_token_cb.pack(side=tk.LEFT)
 
-        # Warning
         warning_frame = tk.Frame(content, bg=self.colors.BG_CARD)
         warning_frame.pack(fill=tk.X, pady=(5, 0))
         self.warning_label = tk.Label(warning_frame, text=self.lang.get("warning_text"),
@@ -287,12 +237,10 @@ class TokenCard(tk.Frame):
                                       fg=self.colors.STATUS_WARNING)
         self.warning_label.pack(anchor=tk.W)
 
-        # Separator
         separator = tk.Frame(self, bg=self.colors.BG_CARD_HEADER, height=1)
         separator.pack(fill=tk.X, side=tk.BOTTOM)
 
     def update_language(self):
-        """Update texts when language changes."""
         self.header_label.config(text=self.lang.get("bot_config"))
         self.token_label.config(text=self.lang.get("token_label"))
         self.help_label.config(text=self.lang.get("help_text"))
@@ -300,15 +248,12 @@ class TokenCard(tk.Frame):
         self.warning_label.config(text=self.lang.get("warning_text"))
 
     def toggle_visibility(self):
-        """Toggle visibility of token entry."""
         if self.token_entry:
             self.token_entry.config(show="" if self.show_token_var.get() else "*")
 
     def get_token(self):
-        """Get token value."""
         return self.token_entry.get().strip() if self.token_entry else ""
 
     def set_disabled(self, disabled):
-        """Set disabled state of token entry."""
         if self.token_entry:
             self.token_entry.config(state=tk.DISABLED if disabled else tk.NORMAL)

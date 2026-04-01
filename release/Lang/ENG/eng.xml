@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+    <string name="app_title">Werewolf Discord Bot</string>
+    <string name="subtitle">Automated Werewolf Game on Discord</string>
+    <string name="bot_config">BOT CONFIGURATION</string>
+    <string name="token_label">Discord Bot Token</string>
+    <string name="show_token">Show Token</string>
+    <string name="help_text">Enter your Discord bot token here</string>
+    <string name="warning_text">Do not share your token with anyone!</string>
+    <string name="system_status">SYSTEM STATUS</string>
+    <string name="status_offline">BOT OFFLINE</string>
+    <string name="status_online">BOT ONLINE</string>
+    <string name="status_error">BOT ERROR</string>
+    <string name="detail_not_running">Not running</string>
+    <string name="detail_running">Bot is running...</string>
+    <string name="detail_stopped">Bot stopped</string>
+    <string name="detail_error">Bot error - Check log</string>
+    <string name="network_status">NETWORK STATUS</string>
+    <string name="check_connection">Check Connection</string>
+    <string name="auto_monitor">Auto Monitor</string>
+    <string name="start_bot">START BOT</string>
+    <string name="stop_bot">STOP BOT</string>
+    <string name="restart_bot">RESTART</string>
+    <string name="console_output">CONSOLE OUTPUT</string>
+    <string name="clear_log">Clear</string>
+    <string name="save_log">Save</string>
+    <string name="auto_scroll">Auto Scroll</string>
+    <string name="auto_reconnect">Auto Reconnect</string>
+    <string name="copyright">2024 Werewolf Bot</string>
+    <string name="internet_online">Internet Connection: ONLINE</string>
+    <string name="internet_offline">Internet Connection: OFFLINE</string>
+    <string name="internet_connected">✅ Internet connected</string>
+    <string name="internet_disconnected">❌ No internet connection!</string>
+    <string name="checking">Checking Connection...</string>
+    <string name="language">Language</string>
+</strings>
