@@ -43,12 +43,18 @@ Werewolf Discord Bot adalah bot Discord  yang berjalan dengan local memungkinkan
 |/vote | Memulai sesi voting (moderator) | 
 | /end | Mengakhiri game (moderator) | 
 
-### 📋 Persyaratan Sistem
+### 📦 Cara Install
 
-- **Python** 3.8 atau lebih baru
-- **Discord Bot Token** (dapatkan dari [Discord Developer Portal](https://discord.com/developers/applications))
-- **Koneksi internet** yang stabil
-- **Library Python** (akan diinstall otomatis)
+1. **Download** file `WerewolfBot-v1.0.0.zip`
+2. **Extract** ke folder pilihan Anda
+3. **Jalankan** `WerewolfBot.exe`
+4. **Masukkan token bot** Discord (dapatkan di [Discord Developer Portal](https://discord.com/developers/applications))
+5. **Klik START BOT**
+
+### ⚙️ Persyaratan Sistem
+- Windows 10 / Windows 11
+- Koneksi internet stabil
+- Token bot Discord (gratis)
 
 ### 🔑 Cara Mendapatkan Token Bot Discord
 
@@ -182,6 +188,15 @@ Werewolf Discord Bot is a locally-run Discord bot that allows you to play the We
 | `/end` | End the game (moderator only) |
 | `/status` | Check game status (moderator only) |
 | `/guide` | Game guide |
+
+
+### 📦 Installation
+
+1. **Download** the file `WerewolfBot-v1.0.0.zip`
+2. **Extract** to your preferred folder
+3. **Run** `WerewolfBot.exe`
+4. **Enter your Discord bot token** (get from [Discord Developer Portal](https://discord.com/developers/applications))
+5. **Click START BOT**
 
 ### 📋 System Requirements
 - Python 3.8 or newer
