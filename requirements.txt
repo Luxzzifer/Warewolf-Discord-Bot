@@ -1,0 +1,11 @@
+# Discord Bot Requirements
+discord.py>=2.3.2
+aiohttp>=3.8.0
+asyncio>=3.4.3
+
+# GUI Requirements (optional, for running with GUI)
+Pillow>=9.0.0
+tkinter  # Built-in with Python
+
+# Development Requirements (optional)
+python-dotenv>=0.19.0
