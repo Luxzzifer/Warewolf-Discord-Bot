@@ -129,17 +129,10 @@ Copy URL yang dihasilkan, paste di browser baru, pilih server, dan klik "**Autho
 ### ❌ Error "Improper token"
 - Token tidak valid, reset token di Developer Portal dan salin kembali
 
----
 
-### 🔒 Tips Keamanan
 
-1. **Jangan pernah membagikan token bot** kepada siapapun
-2. **Simpan token di file `.env`** (gunakan python-dotenv)
-3. **Jangan commit token ke GitHub**
-4. **Reset token** jika Anda curiga telah bocor
 
----
----
+
 ### 🚀 Cara Instalasi
 
 #### 1. Clone Repository
