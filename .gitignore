@@ -1,0 +1,26 @@
+# ── Build & release (jangan di-push) ─────────────────────────
+build/
+dist/
+release/
+*.zip
+*.spec
+build.bat
+
+# ── Konfigurasi rahasia ───────────────────────────────────────
+gui/_secret.py
+.env
+token.txt
+
+# ── User data lokal ───────────────────────────────────────────
+werewolf_log_*.txt
+
+# ── Python cache ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ── OS ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini

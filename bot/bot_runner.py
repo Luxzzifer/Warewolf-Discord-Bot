@@ -1,31 +1,38 @@
 # bot/bot_runner.py
 import sys
 import os
-import io
 
-# Set stdout to UTF-8 for Windows
-if sys.platform == 'win32':
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+# ── UTF-8 stdout/stderr untuk Windows ─────────────────────────────────────
+# Gunakan reconfigure() jika tersedia (Python 3.7+),
+# jangan buat TextIOWrapper baru karena parent process bisa sudah redirect stdout.
+def _ensure_utf8(stream):
+    try:
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
+        elif hasattr(stream, "buffer"):
+            import io
+            return io.TextIOWrapper(stream.buffer, encoding="utf-8",
+                                    errors="replace", line_buffering=True)
+    except Exception:
+        pass
+    return stream
 
-# Disable buffering
-sys.stdout.reconfigure(line_buffering=True)
+sys.stdout = _ensure_utf8(sys.stdout)
+sys.stderr = _ensure_utf8(sys.stderr)
 
-# Add parent directory to path
+# ── Path ───────────────────────────────────────────────────────────────────
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from bot.bot import run_bot
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        token = sys.argv[1]
-    else:
-        token = input("Masukkan token: ")
-    
+    token = sys.argv[1] if len(sys.argv) > 1 else input("Masukkan token: ")
     try:
         run_bot(token)
+    except KeyboardInterrupt:
+        pass
     except Exception as e:
-        print(f"FATAL ERROR: {e}")
         import traceback
+        print(f"FATAL ERROR: {e}", flush=True)
         traceback.print_exc()
-        input("Press Enter to exit...")
+        sys.exit(1)
