@@ -10,7 +10,7 @@
 ## 🇮🇩 Indonesia
 
 ### 📖 Deskripsi
-Werewolf Discord Bot adalah bot Discord  yang berjalan dengan local memungkinkan Anda bermain game Werewolf secara otomatis di server Discord Anda. Bot ini dilengkapi dengan GUI (Graphical User Interface) yang memudahkan pengaturan dan menjalankan bot.
+Werewolf Discord Bot adalah bot Discord  yang berjalan dengan local memungkinkan Anda bermain game Werewolf secara otomatis di server Discord Anda. Bot ini dilengkapi dengan GUI (Graphical User Interface) yang memudahkan pengaturan dan menjalankan bot...
 
 ### ✨ Fitur Utama
 - 🎮 **Game Werewolf Lengkap** - Mendukung hingga 10 pemain dengan berbagai role
@@ -145,7 +145,7 @@ pip install -r requirements.txt
 ## 🇬🇧 English
 
 ### 📖 Description
-Werewolf Discord Bot is a locally-run Discord bot that allows you to play the Werewolf game automatically on your Discord server. The bot comes with a GUI (Graphical User Interface) for easy configuration and management.
+Werewolf Discord Bot is a locally-run Discord bot that allows you to play the Werewolf game automatically on your Discord server. The bot comes with a GUI (Graphical User Interface) for easy configuration and management...
 
 ### ✨ Features
 - 🎮 **Full Werewolf Game** – Supports up to 10 players with various roles
